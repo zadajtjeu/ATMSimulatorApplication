@@ -1,0 +1,391 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{10573AD9-3FCA-426A-BC0C-3A68A3178261}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PLs</RootNamespace>
+    <AssemblyName>PLs</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Function\ChangePIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Function\CheckBalance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Function\FormCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Function\Logging.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Function\TransferCash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Function\Validation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Function\ViewHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Function\Withdraw.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UC\Continute.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\Continute.Designer.cs">
+      <DependentUpon>Continute.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\ListMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\ListMenu.Designer.cs">
+      <DependentUpon>ListMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\Receipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UC\Receipt.Designer.cs">
+      <DependentUpon>Receipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC1\ValidateCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC1\ValidateCard.Designer.cs">
+      <DependentUpon>ValidateCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC1\ValidatePin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC1\ValidatePin.Designer.cs">
+      <DependentUpon>ValidatePin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC2\CustomWithdraw.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC2\CustomWithdraw.Designer.cs">
+      <DependentUpon>CustomWithdraw.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC2\ErrorWithDraw.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC2\ErrorWithDraw.Designer.cs">
+      <DependentUpon>ErrorWithDraw.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC2\ReceiveBill.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC2\ReceiveBill.Designer.cs">
+      <DependentUpon>ReceiveBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC2\Withdraw.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC2\Withdraw.Designer.cs">
+      <DependentUpon>Withdraw.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC3\CheckBalance.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC3\CheckBalance.Designer.cs">
+      <DependentUpon>CheckBalance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC4\ViewHistory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC4\ViewHistory.Designer.cs">
+      <DependentUpon>ViewHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC4\ViewHistoryTime.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC4\ViewHistoryTime.Designer.cs">
+      <DependentUpon>ViewHistoryTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC5\AccountFail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC5\AccountFail.Designer.cs">
+      <DependentUpon>AccountFail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC5\AccTransferTo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC5\AccTransferTo.Designer.cs">
+      <DependentUpon>AccTransferTo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC5\AmountFail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC5\AmountFail.Designer.cs">
+      <DependentUpon>AmountFail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC5\cfTransferCash.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC5\cfTransferCash.Designer.cs">
+      <DependentUpon>cfTransferCash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC5\ReceiveAccount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC5\ReceiveAccount.Designer.cs">
+      <DependentUpon>ReceiveAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC5\RuleTransfer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC5\RuleTransfer.Designer.cs">
+      <DependentUpon>RuleTransfer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC5\TransferAmount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC5\TransferAmount.Designer.cs">
+      <DependentUpon>TransferAmount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC5\TransferSuccess.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC5\TransferSuccess.Designer.cs">
+      <DependentUpon>TransferSuccess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC6\ChangePIN.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC6\ChangePIN.Designer.cs">
+      <DependentUpon>ChangePIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\Waiting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\Waiting.Designer.cs">
+      <DependentUpon>Waiting.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\Continute.resx">
+      <DependentUpon>Continute.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\ListMenu.resx">
+      <DependentUpon>ListMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\Receipt.resx">
+      <DependentUpon>Receipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC1\ValidateCard.resx">
+      <DependentUpon>ValidateCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC1\ValidatePin.resx">
+      <DependentUpon>ValidatePin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC2\CustomWithdraw.resx">
+      <DependentUpon>CustomWithdraw.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC2\ErrorWithDraw.resx">
+      <DependentUpon>ErrorWithDraw.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC2\ReceiveBill.resx">
+      <DependentUpon>ReceiveBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC2\Withdraw.resx">
+      <DependentUpon>Withdraw.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC3\CheckBalance.resx">
+      <DependentUpon>CheckBalance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC4\ViewHistory.resx">
+      <DependentUpon>ViewHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC4\ViewHistoryTime.resx">
+      <DependentUpon>ViewHistoryTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC5\AccountFail.resx">
+      <DependentUpon>AccountFail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC5\AccTransferTo.resx">
+      <DependentUpon>AccTransferTo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC5\AmountFail.resx">
+      <DependentUpon>AmountFail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC5\cfTransferCash.resx">
+      <DependentUpon>cfTransferCash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC5\ReceiveAccount.resx">
+      <DependentUpon>ReceiveAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC5\RuleTransfer.resx">
+      <DependentUpon>RuleTransfer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC5\TransferAmount.resx">
+      <DependentUpon>TransferAmount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC5\TransferSuccess.resx">
+      <DependentUpon>TransferSuccess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC6\ChangePIN.resx">
+      <DependentUpon>ChangePIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\Waiting.resx">
+      <DependentUpon>Waiting.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BULs\BULs.csproj">
+      <Project>{a886822e-e81d-403f-b341-a7e821632ced}</Project>
+      <Name>BULs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTOs\DTOs.csproj">
+      <Project>{c255ba9f-06fe-4bc7-98bb-4586007cdc25}</Project>
+      <Name>DTOs</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Home.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\withdraw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChangePIN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CheckBalance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transfer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ViewHistory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VH1Month.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VH1Week.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VH1Year.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VH2Year.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VH4Month.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VH6Months.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.ico" />
+    <None Include="Resources\BtnLike.png" />
+    <None Include="Resources\BtnDisLike.png" />
+    <None Include="Resources\BtnClear.png" />
+    <None Include="Resources\BtnEnter.png" />
+    <None Include="Resources\BtnCancel.png" />
+    <None Include="Resources\arrow-forward.png" />
+    <None Include="Resources\arrow-back.png" />
+    <None Include="Resources\BienLaiFoot.png" />
+    <None Include="Resources\BienLaiHead.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
