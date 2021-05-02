@@ -76,7 +76,7 @@ CREATE TABLE Account (
 CREATE TABLE Card (
   CardNo      varchar(16) NOT NULL PRIMARY KEY, 
   Status      varchar(30) NULL, 
-  PIN         varchar(6) NULL, 
+  PIN         varchar(50) NULL, 
   StartDate   datetime NULL, 
   ExpiredDate datetime NULL, 
   Attempt     int DEFAULT 0, 
@@ -144,10 +144,10 @@ INSERT INTO Account VALUES
 ('103752256569', 50000000, 4, 1, 2);
 ---------------------------------
 INSERT INTO Card VALUES
-('1500220195739', 'inoperative', '123456', '12/22/2018', '12/21/2025', 0, 1),
-('1500220196521', 'block', '456789', '6/22/2018', '6/21/2020', 0, 2),
-('1500220195722', 'normal', '654321', '12/22/2018', '12/21/2025', 0, 3),
-('1500220195830', 'normal', '521478', '12/22/2018', '12/21/2025', 0, 4);
+('1500220195739', 'inoperative', CONVERT(VARCHAR(50), HASHBYTES( 'MD5', N'123456'), 2), '12/22/2018', '12/21/2025', 0, 1),
+('1500220196521', 'block', CONVERT(VARCHAR(50), HASHBYTES( 'MD5', N'456789'), 2), '6/22/2018', '6/21/2020', 0, 2),
+('1500220195722', 'normal', CONVERT(VARCHAR(50), HASHBYTES( 'MD5', N'654321'), 2), '12/22/2018', '12/21/2025', 0, 3),
+('1500220195830', 'normal', CONVERT(VARCHAR(50), HASHBYTES( 'MD5', N'521478'), 2), '12/22/2018', '12/21/2025', 0, 4);
 ---------------------------------
 INSERT INTO ATM VALUES
 (N'CN Tây Hà Nội', N'ĐHCN Khu A'),

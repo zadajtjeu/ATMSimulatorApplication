@@ -514,5 +514,19 @@ namespace PLs
             e.Graphics.DrawImage(newIMG2, 25, 920, 800, 230);
             e.Graphics.DrawString(infohoadon, new Font("Arial",20), Brushes.Black, new Point(25, 250));
         }
+
+        public static string GetMD5Hash(string input)
+        {
+            System.Security.Cryptography.MD5CryptoServiceProvider x = new System.Security.Cryptography.MD5CryptoServiceProvider();
+            byte[] bs = System.Text.Encoding.Unicode.GetBytes(input);
+            bs = x.ComputeHash(bs);
+            System.Text.StringBuilder s = new System.Text.StringBuilder();
+            foreach (byte b in bs)
+            {
+                s.Append(b.ToString("x2").ToLower());
+            }
+            string password = s.ToString();
+            return password;
+        }
     }
 }

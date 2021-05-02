@@ -61,7 +61,7 @@ namespace PLs
         {
             if ((ChangePIN.Instance.getTextBoxNewPIN().Length == 0 || 
                 ChangePIN.Instance.getTextBoxNewPIN().Length != 6 ||
-                ChangePIN.Instance.getTextBoxNewPIN() == cardinfor.pin)
+                GetMD5Hash(ChangePIN.Instance.getTextBoxNewPIN()).ToUpper() == cardinfor.pin)
                 && ChangePIN.Instance.getLabel1() != "Re-Enter PIN you want to change"
                 && ChangePIN.Instance.getLbSuccess().Visible != true )
             {
@@ -86,7 +86,7 @@ namespace PLs
                 ChangePIN.Instance.showLbFailMatch();
                 return;
             }
-            else if(cardBUL.SetPin(cardinfor.cardNo, pinCode))
+            else if(cardBUL.SetPin(cardinfor.cardNo, GetMD5Hash(pinCode).ToUpper()))
             {
                 ChangePIN.Instance.showSuccess();
                 statePin = "ChangePINSuccess";

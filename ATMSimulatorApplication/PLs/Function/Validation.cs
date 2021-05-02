@@ -93,7 +93,7 @@ namespace PLs
             bool checkAttempt = cardBUL.CheckAttempt(cardinfor.cardNo);
             bool checkExpiredDate = cardBUL.checkExpiredDate(cardinfor.cardNo);
             bool checkStatus = cardBUL.checkStatus(cardinfor.cardNo);
-            if (cardBUL.GetPIN(cardinfor.cardNo).Equals(ValidatePin.Instance.getTextBoxPin()) && checkAttempt && checkStatus && checkExpiredDate)
+            if (cardBUL.GetPIN(cardinfor.cardNo).Equals(GetMD5Hash(ValidatePin.Instance.getTextBoxPin()).ToUpper()) && checkAttempt && checkStatus && checkExpiredDate)
             {
                 ValidatePin.Instance.clearTextBoxPIN();
                 bool resetAttempt = cardBUL.UpdateAttempt(cardinfor.cardNo, 0);
@@ -109,7 +109,7 @@ namespace PLs
                 }
                 state = "menu";
             }
-            else if (cardBUL.GetPIN(cardinfor.cardNo).Equals(ValidatePin.Instance.getTextBoxPin()) || !checkAttempt || !checkStatus || !checkExpiredDate)
+            else if (cardBUL.GetPIN(cardinfor.cardNo).Equals(GetMD5Hash(ValidatePin.Instance.getTextBoxPin()).ToUpper()) || !checkAttempt || !checkStatus || !checkExpiredDate)
             {
                 ValidatePin.Instance.getLbLockCard().Visible = true;
             }
