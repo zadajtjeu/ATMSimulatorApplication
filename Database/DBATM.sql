@@ -131,7 +131,8 @@ INSERT INTO Customer VALUES
 ('PHUNG TIEN DUNG',		'0932175959',	'tiendung@gmail.com',	N'Thái Bình'),
 ('NGUYEN HOANG DAO',	'0332190433',	'daond@gmail.com',		N'Hà Nội'),
 ('TRAN ANH MINH',		'0751232332',	'nguyenvana@gmail.com', N'Tuyên Quang'),
-('HO VAN QUY',			'0941261818',	'nguyenvana@gmail.com', N'Vĩnh Phúc');
+('HO VAN QUY',			'0941261818',	'nguyenvana@gmail.com', N'Vĩnh Phúc'),
+('PHAM THANH NAM',		'0971409001',	'nampt.me@gmail.com', N'Thái Bình');
 ---------------------------------
 INSERT INTO OverDraft VALUES(0);
 ---------------------------------
@@ -141,13 +142,17 @@ INSERT INTO Account VALUES
 ('103524801339', 490000, 1, 1, 1),
 ('103652842155', 10000000, 2, 1, 1),
 ('103662525123', 19000000, 3, 1, 1),
-('103752256569', 50000000, 4, 1, 2);
+('103752256569', 50000000, 4, 1, 2),
+('103103103103', 1000000000, 5, 1, 2);
 ---------------------------------
 INSERT INTO Card VALUES
 ('1500220195739', 'inoperative', CONVERT(VARCHAR(50), HASHBYTES( 'MD5', N'123456'), 2), '12/22/2018', '12/21/2025', 0, 1),
-('1500220196521', 'block', CONVERT(VARCHAR(50), HASHBYTES( 'MD5', N'456789'), 2), '6/22/2018', '6/21/2020', 0, 2),
+('1500220196521', 'block', CONVERT(VARCHAR(50), HASHBYTES( 'MD5', N'456789'), 2), '6/22/2018', '6/21/2020', 3, 2),
 ('1500220195722', 'normal', CONVERT(VARCHAR(50), HASHBYTES( 'MD5', N'654321'), 2), '12/22/2018', '12/21/2025', 0, 3),
-('1500220195830', 'normal', CONVERT(VARCHAR(50), HASHBYTES( 'MD5', N'521478'), 2), '12/22/2018', '12/21/2025', 0, 4);
+('1500220195830', 'normal', CONVERT(VARCHAR(50), HASHBYTES( 'MD5', N'521478'), 2), '12/22/2018', '12/21/2025', 0, 4),
+('1500150015001', 'normal', CONVERT(VARCHAR(50), HASHBYTES( 'MD5', N'123456'), 2), '04/30/2021', '04/30/2026', 0, 5),
+('1500150015002', 'normal', CONVERT(VARCHAR(50), HASHBYTES( 'MD5', N'123456'), 2), '04/30/2021', '04/30/2026', 0, 5),
+('1500150015003', 'normal', CONVERT(VARCHAR(50), HASHBYTES( 'MD5', N'123456'), 2), '04/30/2021', '04/30/2026', 0, 5);
 ---------------------------------
 INSERT INTO ATM VALUES
 (N'CN Tây Hà Nội', N'ĐHCN Khu A'),
@@ -211,5 +216,8 @@ select * from Stock
 ---------------------------------
 select * from LogType
 ---------------------------------
+select Customer.Name, Account.AccountNo, Account.Balance, Card.CardNo, Card.Status, Card.PIN, Card.Attempt
+from Customer inner join Account on Customer.CustID = Account.CustID
+			  inner join Card on Account.AccountID = Card.AccountID
 */
 
